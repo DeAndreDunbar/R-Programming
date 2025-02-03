@@ -1,0 +1,24 @@
+Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Berine")
+
+ABC_results <- c(4, 62, 51, 21, 2, 14, 15)
+
+CBS_results <- c(12, 75, 43, 19, 1, 21, 19) 
+
+
+
+
+
+Polls.data <- data.frame(Name, ABC_results,CBS_results) 
+
+
+
+Polls.data
+     Name ABC_results CBS_results
+1     Jeb           4          12
+2  Donald          62          75
+3     Ted          51          43
+4   Marco          21          19
+5   Carly           2           1
+6 Hillary          14          21
+7  Berine          15          19
+ 
