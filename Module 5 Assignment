@@ -1,0 +1,25 @@
+A <- matrix(1:100, nrow=10)  
+B <- matrix(1:1000, nrow=10)
+
+t(A)
+t(B)
+
+
+ac<- A[ , 1]
+
+bc<- B[ , 1]
+
+A <- ac %*% matrix(1, ncol=10, nrow=10) 
+B <- bc %*% matrix(1, ncol=10, nrow=10) 
+
+
+
+Bt <- t(B)
+
+
+
+AB<-  A %*% t(B)
+
+inAB <- solve(AB)
+    
+inAB
