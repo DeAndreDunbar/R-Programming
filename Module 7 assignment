@@ -1,0 +1,58 @@
+airquality
+data("airquality")
+
+head(airquality, 6)
+
+str(airquality)
+
+summary(airquality)
+
+#S3 example 1
+s <- list(airquality, Ozone = 25, Solar.R = 150, wind = 12.6, Temp = 57)
+ 
+
+
+#S4 example 1
+Airvalues <- setClass("Airvalues", representation(Ozone = "numeric", Solar.R = "numeric", wind = "numeric", Temp = "numeric")) 
+
+s <- new("Airvalues", Ozone = 25, Solar.R = 150, wind = 12.6, Temp = 57)
+
+s
+An object of class "Airvalues"
+Slot "Ozone":
+[1] 25
+
+Slot "Solar.R":
+[1] 150
+
+Slot "wind":
+[1] 12.6
+
+Slot "Temp":
+[1] 57
+
+#S3 example 2
+
+slash <- function(vector1,vector2){
+  mapply(function(x,y) paste(x,"/", y, sep = ""), vector1, vector2)
+}
+
+airquality$Date <-  slash(airquality$Month,airquality$Day)
+
+head(airquality$Date)
+[1] "5/1" "5/2" "5/3" "5/4" "5/5" "5/6"
+
+#S4 example 2
+
+setGeneric("slash", function(x, y) {
+  standardGeneric("slash")
+})
+
+setMethod("slash", c("vector", "vector"), function(x, y) {
+  mapply(function(a, b) paste(a, "/", b, sep = ""), x, y)
+})
+
+date <- slash(airquality$Month, airquality$Day)
+head(date)
+head(date)
+[1] "5/1" "5/2" "5/3" "5/4" "5/5" "5/6"
