@@ -1,0 +1,18 @@
+library(ggplot2)
+library(dplyr)
+library(lattice)
+
+carprice <- read.csv("carprice.csv")
+
+
+
+ plot(x = carprice$Max.Price, y = carprice$Min.Price, col = "blue", main = "Max vs Min price",
+      xlab = "Max Price", ylab = "Min Price")
+
+xyplot(Min.Price~Max.Price, data = carprice, grid = TRUE, groups =Type)
+  
+
+
+
+ggplot(carprice, aes(Max.Price,Min.Price, colour = Type)) + geom_point() +
+  labs(title = "Max and Min price", x = "Max Price", y = "Min Price")
