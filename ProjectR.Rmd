@@ -1,0 +1,77 @@
+---
+title: "Module 12"
+output: html_document
+date: "2025-04-14"
+---
+
+## Main Functions
+
+1.dclean function
+This function aims to elimate NA errors and faulty data. replacing the value to zero or an average of the data points.
+Example Input: 5,7,NA, 2,NA,9
+Example Output: 5,7,0,2,0,9
+```{r }
+
+dclean <- function(df, replace = 0){
+  
+  #example code
+  
+}
+
+
+
+```
+
+
+2. dformat function
+   This allows the to change the data format to something R can read and calulate with. This includes the date format and numbers separated by commas. 
+Example Input: 01/21/2000
+Example Output: 2000-21-01
+```{r }
+
+dformat <- function(df, format = date){
+  
+  # example code
+}
+
+
+
+```
+
+
+3.dclean.text function
+This function allows the users to be able clear up any unnecessary punctuations, special character and unnecessary space.
+Example Input: cash$@number
+Example Output: cash number
+```{r }
+
+dclean.text <- function(x){
+
+  
+# Example Code    
+
+  
+}
+
+```
+
+
+4. dclean.names & d.rename 
+These function allows allow for more control over the names of rows and columns in a dataframe. First function clean the existing names while the second rename the rows or columns the way you want to.
+
+Example 1 input: total.NUm
+Example 1 Output: total NUm
+Example 2 input: toTal Numz
+Example 2 Output: Total Number
+```{r, }
+
+dclean.names <- function(x){
+  # Example code
+}
+
+d.rename <- function(x,y){
+  # Example code
+}
+
+```
+
