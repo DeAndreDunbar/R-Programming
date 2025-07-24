@@ -1,16 +1,17 @@
-airquality
+#Load data
 data("airquality")
 
+#preview
 head(airquality, 6)
 
 str(airquality)
 
+# Summary statistics
 summary(airquality)
 
 #S3 example 1
 s <- list(airquality, Ozone = 25, Solar.R = 150, wind = 12.6, Temp = 57)
  
-
 
 #S4 example 1
 Airvalues <- setClass("Airvalues", representation(Ozone = "numeric", Solar.R = "numeric", wind = "numeric", Temp = "numeric")) 
