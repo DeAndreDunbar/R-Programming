@@ -24,9 +24,11 @@ tukey_multiple <- function(x) {
   for (i in 1:nrow(x))
   { outlier.vec[i] <- all(outliers[i,]) } 
   return(outlier.vec) }
+
 # Second Error
 Error in outliers[, j] && tukey.outlier(x[, j]) : 
   'length = 51' in coercion to 'logical(1)'
+
 # fixed code
 tukey_multiple <- function(x) {
   outliers <- array(TRUE,dim=dim(x))
@@ -38,5 +40,6 @@ tukey_multiple <- function(x) {
   for (i in 1:nrow(x))
   { outlier.vec[i] <- all(outliers[i,]) } 
   return(outlier.vec) }
+
 # Last error
 Error in tukey.outlier(x[, j]) : could not find function "tukey.outlier"
