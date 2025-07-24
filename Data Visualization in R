@@ -2,17 +2,20 @@ library(ggplot2)
 library(dplyr)
 library(lattice)
 
+# saving  file as carprice
 carprice <- read.csv("carprice.csv")
 
 
-
+# Basic R plot visualization
  plot(x = carprice$Max.Price, y = carprice$Min.Price, col = "blue", main = "Max vs Min price",
       xlab = "Max Price", ylab = "Min Price")
 
+
+# Lattice package visualization
 xyplot(Min.Price~Max.Price, data = carprice, grid = TRUE, groups =Type)
   
 
 
-
+# ggplot2 package visualization
 ggplot(carprice, aes(Max.Price,Min.Price, colour = Type)) + geom_point() +
   labs(title = "Max and Min price", x = "Max Price", y = "Min Price")
