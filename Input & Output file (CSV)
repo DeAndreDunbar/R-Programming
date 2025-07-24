@@ -4,20 +4,20 @@ library(boot)
 library(plyr)
 library(data.table)
 
-
+# Saving file as "data"
 data <- read.csv("Assignment 6 Dataset.txt", header = TRUE)
 
 
-
+# filtering the average grade
 StudentAverage = ddply(data, "Sex", summarise,Grade.average = mean(Grade))
 
 
-
+# creating text file
 write.table(StudentAverage, file = "AverageGradeperSex.txt")
 
 
-
+# filtering for Student that have 'i' in their name
 i_student <- subset(data, grepl("i", data$Name, ignore.case = TRUE))
 
-
+# creating csv file
 write.csv(i_student, file = "List_of_IStudents.csv")
